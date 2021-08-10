@@ -1,0 +1,205 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.4f1 (0abb6314276a) revision 703331'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Enterprise LTSC 2019; OS build 17763.2061; Version 1809; 64bit' Language: 'en' Physical Memory: 8175 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.4f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/Precijan/Desktop/Unity3D Game
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+59907
+Successfully changed project path to: C:/Users/Precijan/Desktop/Unity3D Game
+C:/Users/Precijan/Desktop/Unity3D Game
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 52.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.4f1 (0abb6314276a)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Precijan/Desktop/Unity3D Game/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon RX550/550 Series (ID=0x699f)
+    Vendor:   
+    VRAM:     2028 MB
+    Driver:   27.20.14501.18003
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56292
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.005158 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 54.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.364 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001247 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.779 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.42 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1134 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 60.3 MB.
+System memory in use after: 60.3 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1580.
+Total: 4.097900 ms (FindLiveObjects: 0.664300 ms CreateObjectMapping: 0.108500 ms MarkObjects: 3.162600 ms  DeleteObjects: 0.160200 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Textures/cherry.png
+  artifactKey: Guid(70d1043beb9066247b6c6dcfb1885ec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/cherry.png using Guid(70d1043beb9066247b6c6dcfb1885ec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8f8925b25bb74e0e49c069d0a50604b') in 0.120916 seconds
+  Import took 0.124475 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.613935 seconds.
+  path: Assets/Textures/cherry.png
+  artifactKey: Guid(70d1043beb9066247b6c6dcfb1885ec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/cherry.png using Guid(70d1043beb9066247b6c6dcfb1885ec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '727278b7aaabffb218767f265122adbe') in 0.101810 seconds
+  Import took 0.106524 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 750.206259 seconds.
+  path: Assets/Textures/pineapple.png
+  artifactKey: Guid(7fd0b5c8ac21a2d4a840b02cca93f94d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/pineapple.png using Guid(7fd0b5c8ac21a2d4a840b02cca93f94d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e227c5bf28dc6a7312a27c1d46b6d330') in 0.049980 seconds
+  Import took 0.055105 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.036554 seconds.
+  path: Assets/Textures/pineapple.png
+  artifactKey: Guid(7fd0b5c8ac21a2d4a840b02cca93f94d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/pineapple.png using Guid(7fd0b5c8ac21a2d4a840b02cca93f94d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5865ae26a541705498928bc546173a4d') in 0.027580 seconds
+  Import took 0.031405 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021878 seconds.
+  path: Assets/Textures/pineapple.png
+  artifactKey: Guid(7fd0b5c8ac21a2d4a840b02cca93f94d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/pineapple.png using Guid(7fd0b5c8ac21a2d4a840b02cca93f94d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5865ae26a541705498928bc546173a4d') in 0.025463 seconds
+  Import took 0.029270 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001203 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.647 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1116 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.0 MB.
+System memory in use after: 62.1 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1592.
+Total: 2.883800 ms (FindLiveObjects: 0.308700 ms CreateObjectMapping: 0.091600 ms MarkObjects: 2.390100 ms  DeleteObjects: 0.091600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 181.538852 seconds.
+  path: Assets/Materials/TextColorGradient.asset
+  artifactKey: Guid(09b058057b015cf4182ff5ac97875c6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TextColorGradient.asset using Guid(09b058057b015cf4182ff5ac97875c6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74dcfc59be4bd08b7f9c62d58f9db479') in 0.043858 seconds
+  Import took 0.048993 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 231.984162 seconds.
+  path: Assets/Textures/avocado.png
+  artifactKey: Guid(c78bbca2dfb07544ea8c5fc27c701cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/avocado.png using Guid(c78bbca2dfb07544ea8c5fc27c701cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a80723b4046156c469e8526c8d56cae') in 0.068010 seconds
+  Import took 0.072217 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.492410 seconds.
+  path: Assets/Textures/avocado.png
+  artifactKey: Guid(c78bbca2dfb07544ea8c5fc27c701cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/avocado.png using Guid(c78bbca2dfb07544ea8c5fc27c701cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f183ea29f6f1361695b26a26ce44f69') in 0.068902 seconds
+  Import took 0.072746 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 217.211126 seconds.
+  path: Assets/Textures/tomato.png
+  artifactKey: Guid(e3fcbafc983b57247b874a03cceb99e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/tomato.png using Guid(e3fcbafc983b57247b874a03cceb99e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86af46708244a77b271bbd71491077fd') in 0.024479 seconds
+  Import took 0.029690 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003060 seconds.
+  path: Assets/Textures/tomato.png
+  artifactKey: Guid(e3fcbafc983b57247b874a03cceb99e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/tomato.png using Guid(e3fcbafc983b57247b874a03cceb99e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86af46708244a77b271bbd71491077fd') in 0.013516 seconds
+  Import took 0.017703 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.047427 seconds.
+  path: Assets/Textures/tomato.png
+  artifactKey: Guid(e3fcbafc983b57247b874a03cceb99e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/tomato.png using Guid(e3fcbafc983b57247b874a03cceb99e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee0b95c2af6fd449c3c70cf882ee8152') in 0.028204 seconds
+  Import took 0.032034 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010973 seconds.
+  path: Assets/Textures/tomato.png
+  artifactKey: Guid(e3fcbafc983b57247b874a03cceb99e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/tomato.png using Guid(e3fcbafc983b57247b874a03cceb99e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee0b95c2af6fd449c3c70cf882ee8152') in 0.026096 seconds
+  Import took 0.030383 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001264 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.669 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1116 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.0 MB.
+System memory in use after: 62.1 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1600.
+Total: 2.900300 ms (FindLiveObjects: 0.312700 ms CreateObjectMapping: 0.094600 ms MarkObjects: 2.397700 ms  DeleteObjects: 0.093300 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
