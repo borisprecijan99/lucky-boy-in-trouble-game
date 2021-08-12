@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectableItem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameManager gameManager;
+
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Rotate(0, 90 * Time.deltaTime, 0);
@@ -18,34 +16,35 @@ public class CollectableItem : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //GameManager.pokupljeno.Find(go => go.name == gameObject.name);
         switch (tag)
         {
             case "carrotCollectable":
-                
+                gameManager.IncreaseCollectedNumberOfCarrots();
                 break;
             case "appleCollectable":
-
+                gameManager.IncreaseCollectedNumberOfApples();
                 break;
             case "bananaCollectable":
-
+                gameManager.IncreaseCollectedNumberOfBananas();
                 break;
             case "cherryCollectable":
-
+                gameManager.IncreaseCollectedNumberOfCherries();
                 break;
             case "avocadoCollectable":
-
+                gameManager.IncreaseCollectedNumberOfAvocados();
                 break;
             case "tomatoCollectable":
-
+                gameManager.IncreaseCollectedNumberOfTomatoes();
                 break;
             case "pineappleCollectable":
-
+                gameManager.IncreaseCollectedNumberOfPineapples();
                 break;
             case "watermelonCollectable":
-
+                gameManager.IncreaseCollectedNumberOfWatermelons();
                 break;
         }
+        GameObject.FindObjectOfType<AudioManager>().PlayIfIsPlaying("collectableItem");
+        gameManager.GetListOfCollectedItems().Add(gameObject.name);
         Destroy(gameObject);
     }
 }

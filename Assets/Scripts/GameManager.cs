@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +7,8 @@ public class GameManager : MonoBehaviour
     private MainMenu mainMenu;
     private PauseMenu pauseMenu;
     private static int level;
+    private static int lives;
+
     private static int totalNumberOfCarrots;
     private static int collectedNumberOfCarrots;
 
@@ -16,72 +17,261 @@ public class GameManager : MonoBehaviour
 
     private static int totalNumberOfBananas;
     private static int collectedNumberOfBananas;
-    private static int score;
-    private static int lives;
-    public static List<GameObject> listOfCollectedItems;
+
+    private static int totalNumberOfWatermelons;
+    private static int collectedNumberOfWatermelons;
+
+    private static int totalNumberOfCherries;
+    private static int collectedNumberOfCherries;
+
+    private static int totalNumberOfPineapples;
+    private static int collectedNumberOfPineapples;
+
+    private static int totalNumberOfAvocados;
+    private static int collectedNumberOfAvocados;
+
+    private static int totalNumberOfTomatoes;
+    private static int collectedNumberOfTomatoes;
+
+    private static List<string> listOfCollectedItems;
 
     static GameManager()
     {
         level = 1;
-        score = 0;
         lives = 5;
         collectedNumberOfCarrots = 0;
         collectedNumberOfApples = 0;
         collectedNumberOfBananas = 0;
-        listOfCollectedItems = new List<GameObject>();
+        collectedNumberOfAvocados = 0;
+        collectedNumberOfCherries = 0;
+        collectedNumberOfWatermelons = 0;
+        collectedNumberOfTomatoes = 0;
+        collectedNumberOfPineapples = 0;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         totalNumberOfCarrots = GameObject.FindGameObjectsWithTag("carrotCollectable").Length;
         totalNumberOfApples = GameObject.FindGameObjectsWithTag("appleCollectable").Length;
-        Debug.Log("Number of carrots on scene: " + totalNumberOfCarrots);
+        totalNumberOfBananas = GameObject.FindGameObjectsWithTag("bananaCollectable").Length;
+        totalNumberOfAvocados = GameObject.FindGameObjectsWithTag("avocadoCollectable").Length;
+        totalNumberOfCherries = GameObject.FindGameObjectsWithTag("cherryCollectable").Length;
+        totalNumberOfWatermelons = GameObject.FindGameObjectsWithTag("watermelonCollectable").Length;
+        totalNumberOfTomatoes = GameObject.FindGameObjectsWithTag("tomatoCollectable").Length;
+        totalNumberOfPineapples = GameObject.FindGameObjectsWithTag("pineappleCollectable").Length;
+
+        if (listOfCollectedItems == null)
+        {
+            listOfCollectedItems = new List<string>();
+        }
+        else
+        {
+            if (listOfCollectedItems.Capacity > 0)
+            {
+                foreach (string name in listOfCollectedItems)
+                {
+                    Destroy(GameObject.Find(name));
+                }
+            }
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+        }
     }
 
-    public static int GetScore()
+    public void LoadNextLevel()
     {
-        return score;
+        //logika
+        //pokusaj da ucitas sledeci nivo
+        //ako ga pronadjes, ucitaj ga
+        //inace idi na scenu na kojoj se prikazuje da je resena cela igra, a potom i u glavni meni
+
+        //IncreaseLevel();
+        if (SceneManager.GetSceneByName("Level" + level).IsValid())
+        {
+            //povecaj zivote itd itd...
+            if (IsAllCollected())
+            {
+                lives++;
+            }
+            SceneManager.LoadScene("Level" + level);
+        }
+        else
+        {
+            level = 1;
+            lives = 5;
+            //SceneManager.LoadScene("gotovaIgraScena");
+        }
     }
 
-    public static int GetLevel()
+    public void RestartCurrentLevelOrGameOver()
+    {
+        lives--;
+        if (lives == 0)
+        {
+            level = 1;
+            lives = 5;
+            listOfCollectedItems.Clear();
+            //game over
+            //load game over scene
+            SceneManager.LoadScene("GameOver");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+    private bool IsAllCollected()
+    {
+        bool carrots = collectedNumberOfCarrots == totalNumberOfCarrots;
+        bool apples = collectedNumberOfApples == totalNumberOfApples;
+        bool bananas = collectedNumberOfBananas == totalNumberOfBananas;
+        bool cherries = collectedNumberOfCherries == totalNumberOfCherries;
+        bool watermelons = collectedNumberOfWatermelons == totalNumberOfWatermelons;
+        bool pineapples = collectedNumberOfPineapples == totalNumberOfPineapples;
+        bool avocados = collectedNumberOfAvocados == totalNumberOfAvocados;
+        bool tomatoes = collectedNumberOfTomatoes == totalNumberOfTomatoes;
+        return carrots && apples && bananas && cherries && watermelons && pineapples && avocados && tomatoes;
+    }
+
+    public List<string> GetListOfCollectedItems()
+    {
+        return listOfCollectedItems;
+    }
+
+    public int GetLevel()
     {
         return level;
     }
 
-    public static void IncreaseScore(int s)
+    public int GetLives()
     {
-        score += s;
+        return lives;
     }
 
-    public static void IncreaseLives()
-    {
-        lives++;
-    }
-
-    public static int GetTotalNumberOfCarrots()
+    public int GetTotalNumberOfCarrots()
     {
         return totalNumberOfCarrots;
     }
 
-    public static int GetCollectedNumberOfCarrots()
+    public int GetCollectedNumberOfCarrots()
     {
         return collectedNumberOfCarrots;
     }
 
-    public static int GetTotalNumberOfApples()
+    public void IncreaseCollectedNumberOfCarrots()
+    {
+        collectedNumberOfCarrots++;
+    }
+
+    public int GetTotalNumberOfApples()
     {
         return totalNumberOfApples;
     }
 
-    public static int GetCollectedNumberOfApples()
+    public int GetCollectedNumberOfApples()
     {
         return collectedNumberOfApples;
+    }
+
+    public void IncreaseCollectedNumberOfApples()
+    {
+        collectedNumberOfApples++;
+    }
+
+    public int GetTotalNumberOfBananas()
+    {
+        return totalNumberOfBananas;
+    }
+
+    public int GetCollectedNumberOfBananas()
+    {
+        return collectedNumberOfBananas;
+    }
+
+    public void IncreaseCollectedNumberOfBananas()
+    {
+        collectedNumberOfBananas++;
+    }
+
+    public int GetTotalNumberOfAvocados()
+    {
+        return totalNumberOfAvocados;
+    }
+
+    public int GetCollectedNumberOfAvocados()
+    {
+        return collectedNumberOfAvocados;
+    }
+
+    public void IncreaseCollectedNumberOfAvocados()
+    {
+        collectedNumberOfAvocados++;
+    }
+
+    public int GetTotalNumberOfCherries()
+    {
+        return totalNumberOfCherries;
+    }
+
+    public int GetCollectedNumberOfCherries()
+    {
+        return collectedNumberOfCherries;
+    }
+
+    public void IncreaseCollectedNumberOfCherries()
+    {
+        collectedNumberOfCherries++;
+    }
+
+    public int GetTotalNumberOfWatermelons()
+    {
+        return totalNumberOfWatermelons;
+    }
+
+    public int GetCollectedNumberOfWatermelons()
+    {
+        return collectedNumberOfWatermelons;
+    }
+
+    public void IncreaseCollectedNumberOfWatermelons()
+    {
+        collectedNumberOfWatermelons++;
+    }
+
+    public int GetTotalNumberOfTomatoes()
+    {
+        return totalNumberOfTomatoes;
+    }
+
+    public int GetCollectedNumberOfTomatoes()
+    {
+        return collectedNumberOfTomatoes;
+    }
+
+    public void IncreaseCollectedNumberOfTomatoes()
+    {
+        collectedNumberOfTomatoes++;
+    }
+
+    public int GetTotalNumberOfPineapples()
+    {
+        return totalNumberOfPineapples;
+    }
+
+    public int GetCollectedNumberOfPineapples()
+    {
+        return collectedNumberOfPineapples;
+    }
+
+    public void IncreaseCollectedNumberOfPineapples()
+    {
+        collectedNumberOfPineapples++;
     }
 }

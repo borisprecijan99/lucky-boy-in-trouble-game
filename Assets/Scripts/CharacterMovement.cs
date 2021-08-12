@@ -59,10 +59,12 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetMouseButtonUp(RIGHT_CLICK))
         {
             characterAnimator.SetFloat("running", 0f);
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("running");
         }
         if (Input.GetMouseButtonDown(RIGHT_CLICK))
         {
             characterAnimator.SetFloat("running", 1f);
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("running");
         }
 
         velocity.y += GRAVITY * Time.deltaTime;

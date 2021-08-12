@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7380042976479869416}
   m_Layer: 0
   m_Name: tomato
-  m_TagString: Untagged
+  m_TagString: tomatoCollectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

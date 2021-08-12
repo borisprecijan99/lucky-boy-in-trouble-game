@@ -6,6 +6,12 @@ TagManager:
   tags:
   - appleCollectable
   - carrotCollectable
+  - avocadoCollectable
+  - cherryCollectable
+  - tomatoCollectable
+  - pineappleCollectable
+  - bananaCollectable
+  - watermelonCollectable
   layers:
   - Default
   - TransparentFX
