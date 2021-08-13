@@ -38,16 +38,7 @@ public class GameManager : MonoBehaviour
 
     static GameManager()
     {
-        level = 1;
-        lives = 5;
-        collectedNumberOfCarrots = 0;
-        collectedNumberOfApples = 0;
-        collectedNumberOfBananas = 0;
-        collectedNumberOfAvocados = 0;
-        collectedNumberOfCherries = 0;
-        collectedNumberOfWatermelons = 0;
-        collectedNumberOfTomatoes = 0;
-        collectedNumberOfPineapples = 0;
+        InitializeVariables();
     }
 
     void Start()
@@ -83,28 +74,46 @@ public class GameManager : MonoBehaviour
         {
             if (!pauseMenu.IsPaused())
             {
-                //gameObject.SetActive(true);
-                //ui.ShowPauseMenu();
                 pauseMenu.Pause();
             }
             else
             {
-                //gameObject.SetActive(false);
-                //ui.HidePauseMenu();
                 pauseMenu.Resume();
             }
         }
     }
 
+    private static void InitializeVariables()
+    {
+        level = 1;
+        lives = 5;
+        collectedNumberOfCarrots = 0;
+        collectedNumberOfApples = 0;
+        collectedNumberOfBananas = 0;
+        collectedNumberOfAvocados = 0;
+        collectedNumberOfCherries = 0;
+        collectedNumberOfWatermelons = 0;
+        collectedNumberOfTomatoes = 0;
+        collectedNumberOfPineapples = 0;
+    }
+
+    private bool IsSceneExists(int buildIndex)
+    {
+        int lastSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
+        if (buildIndex <= lastSceneIndex)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void LoadNextLevel()
     {
-        //logika
-        //pokusaj da ucitas sledeci nivo
-        //ako ga pronadjes, ucitaj ga
-        //inace idi na scenu na kojoj se prikazuje da je resena cela igra, a potom i u glavni meni
-
         level++;
-        if (SceneManager.GetSceneByName("Level" + level).IsValid())
+        if (IsSceneExists(level))
         {
             if (IsAllCollected())
             {
@@ -114,9 +123,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            level = 1;
-            lives = 5;
-            //SceneManager.LoadScene("gotovaIgraScena");
+            InitializeVariables();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -125,10 +135,11 @@ public class GameManager : MonoBehaviour
         lives--;
         if (lives == 0)
         {
-            level = 1;
+            /*level = 1;
             lives = 5;
-            listOfCollectedItems.Clear();
+            listOfCollectedItems.Clear();*/
             //fali i reset vrednosti za voce i povrce!!!
+            InitializeVariables();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadScene(0);

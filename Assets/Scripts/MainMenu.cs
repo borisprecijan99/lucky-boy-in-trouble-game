@@ -16,13 +16,13 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator LoadFirstLevel()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.75f);
         SceneManager.LoadScene(1);
     }
 
     private IEnumerator QuitGame()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.75f);
         Application.Quit();
     }
 }

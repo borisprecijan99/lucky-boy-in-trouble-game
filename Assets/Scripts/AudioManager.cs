@@ -5,6 +5,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField]
     private Sound[] sounds;
+    private PauseMenu pauseMenu;
 
     void Start()
     {
@@ -16,19 +17,26 @@ public class AudioManager : MonoBehaviour
             sound.source.loop = sound.loop;
             sound.source.pitch = sound.pitch;
         }
+        pauseMenu = FindObjectOfType<PauseMenu>();
     }
 
     public void Play(string name)
     {
-        Sound sound = Array.Find(sounds, sound => sound.name == name);
-        if (!sound.source.isPlaying)
-            sound.source.Play();
+        if (!pauseMenu.IsPaused())
+        {
+            Sound sound = Array.Find(sounds, sound => sound.name == name);
+            if (!sound.source.isPlaying)
+                sound.source.Play();
+        }
     }
 
     public void PlayIfIsPlaying(string name)
     {
-        Sound sound = Array.Find(sounds, sound => sound.name == name);
-        sound.source.Play();
+        if (!pauseMenu.IsPaused())
+        {
+            Sound sound = Array.Find(sounds, sound => sound.name == name);
+            sound.source.Play();
+        }
     }
 
     public void Stop(string name)
