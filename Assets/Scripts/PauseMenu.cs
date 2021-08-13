@@ -5,19 +5,25 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     private bool isPaused;
+    private GameObject pauseMenuPanel;
+
+    void Start()
+    {
+        Canvas canvas = FindObjectOfType<Canvas>();
+        pauseMenuPanel = canvas.transform.Find("PauseMenu").gameObject;
+    }
     
     public void Resume()
     {
-        /*gameObject.SetActive(false);
-        Time.timeScale = 1f;
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;*/
+        Cursor.visible = false;
+        HidePauseMenu();
     }
 
     public void MainMenu()
     {
-        StartCoroutine(LoadScene("MainMenu"));
+        StartCoroutine(LoadScene(0));
     }
 
     public bool IsPaused()
@@ -27,14 +33,25 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        gameObject.SetActive(true);
-        Time.timeScale = 0f;
         isPaused = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        ShowPauseMenu();
     }
 
-    private IEnumerator LoadScene(string name)
+    private void ShowPauseMenu()
+    {
+        pauseMenuPanel.SetActive(true);
+    }
+
+    private void HidePauseMenu()
+    {
+        pauseMenuPanel.SetActive(false);
+    }
+
+    private IEnumerator LoadScene(int buildIndex)
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(name);
+        SceneManager.LoadScene(buildIndex);
     }
 }

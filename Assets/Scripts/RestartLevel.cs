@@ -13,7 +13,7 @@ public class RestartLevel : MonoBehaviour
     {
         if (other.name == "character")
         {
-            gameManager.RestartCurrentLevelOrGameOver();
+            gameManager.RestartCurrentLevelOrLoadMainMenu();
         }
     }
 }

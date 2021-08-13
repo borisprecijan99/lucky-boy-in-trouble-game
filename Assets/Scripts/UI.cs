@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UI : MonoBehaviour
@@ -15,22 +16,27 @@ public class UI : MonoBehaviour
     private TMP_Text tomatoes;
     private TMP_Text avocados;
     private Canvas canvas;
+    private GameObject pauseMenuObject;
+    private GameObject gameStatusObject;
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         canvas = GetComponent<Canvas>();
-        Transform childLives = canvas.transform.Find("lives");
-        Transform childLevel = canvas.transform.Find("level");
-        Transform childTomatoes = canvas.transform.Find("numberOfTomatoes");
-        Transform childApples = canvas.transform.Find("numberOfApples");
-        Transform childBananas = canvas.transform.Find("numberOfBananas");
-        Transform childCarrots = canvas.transform.Find("numberOfCarrots");
-        Transform childPineapples = canvas.transform.Find("numberOfPineapples");
-        Transform childCherries = canvas.transform.Find("numberOfCherries");
-        Transform childWatermelons = canvas.transform.Find("numberOfWatermelons");
-        Transform childAvocados = canvas.transform.Find("numberOfAvocados");
+        pauseMenuObject = canvas.transform.Find("PauseMenu").gameObject;
+        gameStatusObject = canvas.transform.Find("GameStatus").gameObject;
+
+        /*Transform childLives = gameStatusObject.transform.Find("lives");
+        Transform childLevel = gameStatusObject.transform.Find("level");
+        Transform childTomatoes = gameStatusObject.transform.Find("numberOfTomatoes");
+        Transform childApples = gameStatusObject.transform.Find("numberOfApples");
+        Transform childBananas = gameStatusObject.transform.Find("numberOfBananas");
+        Transform childCarrots = gameStatusObject.transform.Find("numberOfCarrots");
+        Transform childPineapples = gameStatusObject.transform.Find("numberOfPineapples");
+        Transform childCherries = gameStatusObject.transform.Find("numberOfCherries");
+        Transform childWatermelons = gameStatusObject.transform.Find("numberOfWatermelons");
+        Transform childAvocados = gameStatusObject.transform.Find("numberOfAvocados");
 
         lives = childLives.GetComponent<TMP_Text>();
         level = childLevel.GetComponent<TMP_Text>();
@@ -41,12 +47,12 @@ public class UI : MonoBehaviour
         pineapples = childPineapples.GetComponent<TMP_Text>();
         cherries = childCherries.GetComponent<TMP_Text>();
         watermelons = childWatermelons.GetComponent<TMP_Text>();
-        avocados = childAvocados.GetComponent<TMP_Text>();
+        avocados = childAvocados.GetComponent<TMP_Text>();*/
     }
 
     void Update()
     {
-        int lives = gameManager.GetLives();
+        /*int lives = gameManager.GetLives();
         int level = gameManager.GetLevel();
 
         int totalNumberOfBananas = gameManager.GetTotalNumberOfBananas();
@@ -82,6 +88,39 @@ public class UI : MonoBehaviour
         this.pineapples.SetText(collectedNumberOfPineapples + "/" + totalNumberOfPineapples);
         this.cherries.SetText(collectedNumberOfCherries + "/" + totalNumberOfCherries);
         this.watermelons.SetText(collectedNumberOfWatermelons + "/" + totalNumberOfWatermelons);
-        this.avocados.SetText(collectedNumberOfAvocados + "/" + totalNumberOfAvocados);
+        this.avocados.SetText(collectedNumberOfAvocados + "/" + totalNumberOfAvocados);*/
+
+        /*if (!gameManager.GetComponent<PauseMenu>().IsPaused())
+        {
+            pauseMenuObject.SetActive(true);
+            gameStatusObject.SetActive(false);
+            //isPaused = true;
+            gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            pauseMenuObject.SetActive(false);
+            gameStatusObject.SetActive(true);
+            //isPaused = false;
+            gameObject.SetActive(false);
+            Time.timeScale = 1f;
+        }*/
+    }
+
+    public void ShowPauseMenu()
+    {
+        pauseMenuObject.SetActive(true);
+        //gameStatusObject.SetActive(false);
+        gameObject.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void HidePauseMenu()
+    {
+        pauseMenuObject.SetActive(false);
+        //gameStatusObject.SetActive(true);
+        gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

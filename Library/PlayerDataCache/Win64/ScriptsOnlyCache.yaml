@@ -5,11 +5,11 @@ ScriptsOnlyBuild:
     - CharacterMovement
     - CollectableItem
     - GameManager
+    - GameStatus
     - LoadNextLevel
     - MainMenu
     - PauseMenu
     - RestartLevel
-    - UI
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -23,9 +23,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -38,29 +39,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
   sceneClasses:
-    Assets/Scenes/GameOver.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
     Assets/Scenes/Level1.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -103,37 +81,41 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1508}
     - Class: 114
-      Script: {instanceID: 1526}
+      Script: {instanceID: 1518}
     - Class: 114
-      Script: {instanceID: 1854}
+      Script: {instanceID: 1846}
     - Class: 114
-      Script: {instanceID: 1906}
+      Script: {instanceID: 1866}
     - Class: 114
-      Script: {instanceID: 1930}
+      Script: {instanceID: 1898}
     - Class: 114
-      Script: {instanceID: 2098}
+      Script: {instanceID: 2090}
     - Class: 114
-      Script: {instanceID: 2188}
+      Script: {instanceID: 2180}
     - Class: 114
-      Script: {instanceID: 2570}
+      Script: {instanceID: 2562}
     - Class: 114
-      Script: {instanceID: 2680}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 2860}
+      Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 2914}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3086}
+      Script: {instanceID: 3078}
     - Class: 114
-      Script: {instanceID: 3358}
+      Script: {instanceID: 3350}
     - Class: 114
-      Script: {instanceID: 3404}
+      Script: {instanceID: 3396}
     - Class: 114
-      Script: {instanceID: 3436}
+      Script: {instanceID: 3428}
     - Class: 114
-      Script: {instanceID: 3714}
+      Script: {instanceID: 3536}
+    - Class: 114
+      Script: {instanceID: 3706}
+    - Class: 114
+      Script: {instanceID: 304408}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -203,90 +185,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1526}
+      Script: {instanceID: 1518}
     - Class: 114
-      Script: {instanceID: 1854}
+      Script: {instanceID: 1846}
     - Class: 114
-      Script: {instanceID: 2242}
+      Script: {instanceID: 2234}
     - Class: 114
-      Script: {instanceID: 2570}
+      Script: {instanceID: 2562}
     - Class: 114
-      Script: {instanceID: 2680}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 2724}
+      Script: {instanceID: 2716}
     - Class: 114
-      Script: {instanceID: 2860}
+      Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 2914}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 3086}
+      Script: {instanceID: 3078}
     - Class: 114
-      Script: {instanceID: 3404}
+      Script: {instanceID: 3396}
     - Class: 114
-      Script: {instanceID: 3482}
+      Script: {instanceID: 3474}
     - Class: 114
-      Script: {instanceID: 3544}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/PauseMenu.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1526}
-    - Class: 114
-      Script: {instanceID: 1854}
-    - Class: 114
-      Script: {instanceID: 1874}
-    - Class: 114
-      Script: {instanceID: 2570}
-    - Class: 114
-      Script: {instanceID: 2680}
-    - Class: 114
-      Script: {instanceID: 2860}
-    - Class: 114
-      Script: {instanceID: 2914}
-    - Class: 114
-      Script: {instanceID: 3086}
-    - Class: 114
-      Script: {instanceID: 3404}
-    - Class: 114
-      Script: {instanceID: 3544}
+      Script: {instanceID: 3536}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -462,7 +385,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 81db5c889ba4a7ffcfe5808535271b90
+      Hash: a427503c49135d9120429f8f8ac2b0c4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AudioManager
@@ -786,15 +709,19 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: f1b042326c807b5588a776929a2147b0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameStatus
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Level1.unity
-  - Assets/Scenes/PauseMenu.unity
   - Assets/Scenes/Level2.unity
-  - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/Precijan/Desktop/build8/Unity3D Game.exe
+  playerPath: C:/Users/Precijan/Desktop/level1/Unity3D Game.exe

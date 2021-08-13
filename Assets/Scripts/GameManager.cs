@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private MainMenu mainMenu;
+    [SerializeField]
     private PauseMenu pauseMenu;
+
     private static int level;
     private static int lives;
 
@@ -80,7 +81,18 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-
+            if (!pauseMenu.IsPaused())
+            {
+                //gameObject.SetActive(true);
+                //ui.ShowPauseMenu();
+                pauseMenu.Pause();
+            }
+            else
+            {
+                //gameObject.SetActive(false);
+                //ui.HidePauseMenu();
+                pauseMenu.Resume();
+            }
         }
     }
 
@@ -91,15 +103,14 @@ public class GameManager : MonoBehaviour
         //ako ga pronadjes, ucitaj ga
         //inace idi na scenu na kojoj se prikazuje da je resena cela igra, a potom i u glavni meni
 
-        //IncreaseLevel();
+        level++;
         if (SceneManager.GetSceneByName("Level" + level).IsValid())
         {
-            //povecaj zivote itd itd...
             if (IsAllCollected())
             {
                 lives++;
             }
-            SceneManager.LoadScene("Level" + level);
+            SceneManager.LoadScene(level);
         }
         else
         {
@@ -109,7 +120,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RestartCurrentLevelOrGameOver()
+    public void RestartCurrentLevelOrLoadMainMenu()
     {
         lives--;
         if (lives == 0)
@@ -117,13 +128,14 @@ public class GameManager : MonoBehaviour
             level = 1;
             lives = 5;
             listOfCollectedItems.Clear();
-            //game over
-            //load game over scene
-            SceneManager.LoadScene("GameOver");
+            //fali i reset vrednosti za voce i povrce!!!
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene(0);
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

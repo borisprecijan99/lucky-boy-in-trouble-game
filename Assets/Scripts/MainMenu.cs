@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     private IEnumerator LoadFirstLevel()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(1);
     }
 
     private IEnumerator QuitGame()
