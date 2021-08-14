@@ -38,7 +38,10 @@ public class GameManager : MonoBehaviour
 
     static GameManager()
     {
-        InitializeVariables();
+        ResetLevel();
+        ResetLives();
+        ResetCollectedItemCounters();
+        listOfCollectedItems = new List<string>();//dodao
     }
 
     void Start()
@@ -52,12 +55,12 @@ public class GameManager : MonoBehaviour
         totalNumberOfTomatoes = GameObject.FindGameObjectsWithTag("tomatoCollectable").Length;
         totalNumberOfPineapples = GameObject.FindGameObjectsWithTag("pineappleCollectable").Length;
 
-        if (listOfCollectedItems == null)
+        /*if (listOfCollectedItems == null)
         {
             listOfCollectedItems = new List<string>();
         }
         else
-        {
+        {*/
             if (listOfCollectedItems.Capacity > 0)
             {
                 foreach (string name in listOfCollectedItems)
@@ -65,7 +68,7 @@ public class GameManager : MonoBehaviour
                     Destroy(GameObject.Find(name));
                 }
             }
-        }
+        //}
     }
 
     void Update()
@@ -83,10 +86,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private static void InitializeVariables()
+    private static void ResetLevel()
     {
         level = 1;
+    }
+
+    private static void ResetLives()
+    {
         lives = 5;
+    }
+
+    private static void ResetCollectedItemCounters()
+    {
         collectedNumberOfCarrots = 0;
         collectedNumberOfApples = 0;
         collectedNumberOfBananas = 0;
@@ -95,6 +106,14 @@ public class GameManager : MonoBehaviour
         collectedNumberOfWatermelons = 0;
         collectedNumberOfTomatoes = 0;
         collectedNumberOfPineapples = 0;
+    }
+
+    public void ResetAll()
+    {
+        ResetLevel();
+        ResetLives();
+        ResetCollectedItemCounters();
+        listOfCollectedItems.Clear();
     }
 
     private bool IsSceneExists(int buildIndex)
@@ -110,6 +129,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //fali reset
     public void LoadNextLevel()
     {
         level++;
@@ -119,27 +139,32 @@ public class GameManager : MonoBehaviour
             {
                 lives++;
             }
+            ResetCollectedItemCounters();
+            listOfCollectedItems.Clear();
             SceneManager.LoadScene(level);
         }
         else
         {
-            InitializeVariables();
+            ResetLevel();
+            ResetLives();
+            ResetCollectedItemCounters();
+            listOfCollectedItems.Clear();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadScene(0);
         }
     }
 
+    //fali reset
     public void RestartCurrentLevelOrLoadMainMenu()
     {
         lives--;
         if (lives == 0)
         {
-            /*level = 1;
-            lives = 5;
-            listOfCollectedItems.Clear();*/
-            //fali i reset vrednosti za voce i povrce!!!
-            InitializeVariables();
+            ResetLevel();
+            ResetLives();
+            ResetCollectedItemCounters();
+            listOfCollectedItems.Clear();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadScene(0);

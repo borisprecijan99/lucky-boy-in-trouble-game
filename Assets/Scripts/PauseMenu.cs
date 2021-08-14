@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        StartCoroutine(LoadScene(0));
+        StartCoroutine(LoadMainMenu());
     }
 
     public bool IsPaused()
@@ -62,10 +62,12 @@ public class PauseMenu : MonoBehaviour
         pauseMenuPanel.SetActive(false);
     }
 
-    private IEnumerator LoadScene(int buildIndex)
+    private IEnumerator LoadMainMenu()
     {
         yield return new WaitForSeconds(0.75f);
-        SceneManager.LoadScene(buildIndex);
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        gameManager.ResetAll();
+        SceneManager.LoadScene(0);
     }
     
     private IEnumerator ResumeGame()
