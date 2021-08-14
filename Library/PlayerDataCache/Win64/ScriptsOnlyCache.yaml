@@ -86,29 +86,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1898}
     - Class: 114
-      Script: {instanceID: 2090}
+      Script: {instanceID: 2088}
     - Class: 114
-      Script: {instanceID: 2180}
+      Script: {instanceID: 2178}
     - Class: 114
-      Script: {instanceID: 2562}
+      Script: {instanceID: 2560}
     - Class: 114
-      Script: {instanceID: 2672}
+      Script: {instanceID: 2670}
     - Class: 114
-      Script: {instanceID: 2852}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 2906}
+      Script: {instanceID: 2904}
     - Class: 114
-      Script: {instanceID: 3078}
+      Script: {instanceID: 3076}
     - Class: 114
-      Script: {instanceID: 3350}
+      Script: {instanceID: 3348}
     - Class: 114
-      Script: {instanceID: 3396}
+      Script: {instanceID: 3394}
     - Class: 114
-      Script: {instanceID: 3428}
+      Script: {instanceID: 3426}
     - Class: 114
-      Script: {instanceID: 3536}
+      Script: {instanceID: 3534}
     - Class: 114
-      Script: {instanceID: 3706}
+      Script: {instanceID: 3704}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -182,27 +182,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1846}
     - Class: 114
-      Script: {instanceID: 2234}
+      Script: {instanceID: 2232}
     - Class: 114
-      Script: {instanceID: 2562}
+      Script: {instanceID: 2560}
     - Class: 114
-      Script: {instanceID: 2672}
+      Script: {instanceID: 2670}
     - Class: 114
-      Script: {instanceID: 2716}
+      Script: {instanceID: 2714}
     - Class: 114
-      Script: {instanceID: 2852}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 2906}
+      Script: {instanceID: 2904}
     - Class: 114
-      Script: {instanceID: 3056}
+      Script: {instanceID: 3054}
     - Class: 114
-      Script: {instanceID: 3078}
+      Script: {instanceID: 3076}
     - Class: 114
-      Script: {instanceID: 3396}
+      Script: {instanceID: 3394}
     - Class: 114
-      Script: {instanceID: 3474}
+      Script: {instanceID: 3472}
     - Class: 114
-      Script: {instanceID: 3536}
+      Script: {instanceID: 3534}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -711,4 +711,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Level1.unity
   - Assets/Scenes/Level2.unity
-  playerPath: C:/Users/Precijan/Desktop/rwr/Unity3D Game.exe
+  playerPath: C:/Users/Precijan/Desktop/level1completed/Unity3D Game.exe
