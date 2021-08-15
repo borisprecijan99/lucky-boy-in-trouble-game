@@ -38,10 +38,10 @@ public class GameManager : MonoBehaviour
 
     static GameManager()
     {
-        ResetLevel();
-        ResetLives();
+        level = 1;
+        lives = 3;
         ResetCollectedItemCounters();
-        listOfCollectedItems = new List<string>();//dodao
+        listOfCollectedItems = new List<string>();
     }
 
     void Start()
@@ -55,20 +55,13 @@ public class GameManager : MonoBehaviour
         totalNumberOfTomatoes = GameObject.FindGameObjectsWithTag("tomatoCollectable").Length;
         totalNumberOfPineapples = GameObject.FindGameObjectsWithTag("pineappleCollectable").Length;
 
-        /*if (listOfCollectedItems == null)
+        if (listOfCollectedItems.Capacity > 0)
         {
-            listOfCollectedItems = new List<string>();
-        }
-        else
-        {*/
-            if (listOfCollectedItems.Capacity > 0)
+            foreach (string name in listOfCollectedItems)
             {
-                foreach (string name in listOfCollectedItems)
-                {
-                    Destroy(GameObject.Find(name));
-                }
+                Destroy(GameObject.Find(name));
             }
-        //}
+        }
     }
 
     void Update()
@@ -86,16 +79,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private static void ResetLevel()
-    {
-        level = 1;
-    }
-
-    private static void ResetLives()
-    {
-        lives = 5;
-    }
-
     private static void ResetCollectedItemCounters()
     {
         collectedNumberOfCarrots = 0;
@@ -110,8 +93,8 @@ public class GameManager : MonoBehaviour
 
     public void ResetAll()
     {
-        ResetLevel();
-        ResetLives();
+        level = 1;
+        lives = 3;
         ResetCollectedItemCounters();
         listOfCollectedItems.Clear();
     }
@@ -129,7 +112,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //fali reset
     public void LoadNextLevel()
     {
         level++;
@@ -145,8 +127,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            ResetLevel();
-            ResetLives();
+            level = 1;
+            lives = 3;
             ResetCollectedItemCounters();
             listOfCollectedItems.Clear();
             Cursor.lockState = CursorLockMode.None;
@@ -155,14 +137,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //fali reset
     public void RestartCurrentLevelOrLoadMainMenu()
     {
         lives--;
         if (lives == 0)
         {
-            ResetLevel();
-            ResetLives();
+            level = 1;
+            lives = 3;
             ResetCollectedItemCounters();
             listOfCollectedItems.Clear();
             Cursor.lockState = CursorLockMode.None;
